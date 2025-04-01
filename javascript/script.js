@@ -15,16 +15,33 @@ function clearContainer(className) {
 }
 function printShops(shops) {
     shops.forEach(shop => {
-        const li = document.createElement("li");
+        const li = document.createElement("div");
 
-        li.innerText = `shopname: ${shop.shopname}\n
-            region: ${shop.region}\n
-            address: ${shop.address}\n
-            openHour: ${shop.openHour}\n
-            ratingsAverage: ${shop.ratingsAverage}\n
-            ratingQuantity: ${shop.ratingQuantity}\n
-            comments: ${shop.comments}\n
-            `
+        li.innerHTML = `
+        <div class="card mt-5">
+      <!-- <img src="" class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">${shop.shopname}</h5>
+        <p class="card-text">
+          <p>Region: ${shop.region}</p>
+          <p>Opening Hours: ${shop.openingHour}</p>
+          <p>Address: ${shop.address}</p>
+          <p>Rating: ${shop.ratingsAverage}</p>
+        </p>
+        <a href="#" class="btn btn-primary">More Detail</a>
+      </div>
+    </div>
+        `
+
+        // li.innerHTML = `
+        //     shopname: ${shop.shopname}\n
+        //     region: ${shop.region}\n
+        //     address: ${shop.address}\n
+        //     openHour: ${shop.openHour}\n
+        //     ratingsAverage: ${shop.ratingsAverage}\n
+        //     ratingQuantity: ${shop.ratingQuantity}\n
+        //     comments: ${shop.comments}\n
+        //     `
 
         shopsEl.appendChild(li);
     });
@@ -84,6 +101,10 @@ let searchShops = async function () {
     } else if (selectRegion.value == "上環") {
         searchResult = shopsObj.filter((el) => {
             return el.region.includes("上環");
+        });
+    } else if (selectRegion.value == "荃灣") {
+        searchResult = shopsObj.filter((el) => {
+            return el.region.includes("荃灣");
         });
     } else {
         searchResult = shopsObj;
@@ -149,14 +170,14 @@ let createQuestions = async function() {
     console.log(questionsObj);
     printQuestions(questionsObj);
 }
-createQuestions();
+// createQuestions();
 
-btnSearchShops.addEventListener("click", () => {
+btnSearchShops?.addEventListener("click", () => {
     clearContainer("shops");
     searchShops();
 });
 
-btnSearchProducts.addEventListener("click", () => {
+btnSearchProducts?.addEventListener("click", () => {
     clearContainer("products");
     searchProducts();
 });

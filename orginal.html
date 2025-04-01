@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.min.js"></script>
+</head>
+
+<body>
+    <h2>Frontend interface for Backend Project</h2>
+
+    <div class="shops-container">
+        <h3>shops search</h3>
+
+        <div class="shops-search">
+            <input type="text" class="input-shops">
+            <button class="btn btn-search-shops">search shops</button>
+        </div>
+        <select name="region" class="region">
+            <option value="所有">所有</option>
+            <option value="中環">中環</option>
+            <option value="上環">上環</option>
+        </select>
+
+        <ul class="shops"></ul>
+    </div>
+
+
+    <div class="products-container">
+
+        <h3>products search</h3>
+
+        <div class="products-search">
+            <input type="text" class="input-products">
+            <input id="minPrice" name="minPrice" class="input-minPrice" />
+            <input id="maxPrice" name="maxPrice" class="input-maxPrice" />
+            <button class="btn btn-search-products">search products</button>
+
+            <ul class="products"></ul>
+        </div>
+
+    </div>
+
+    <div class="questions-container">
+        <h3>Q and A</h3>
+
+        <div class="qna-container">
+            <ul class="questions"></ul>
+        </div>
+    </div>
+    <script src="./javascript/script.js"></script>
+</body>
+
+</html>

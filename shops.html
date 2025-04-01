@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Electronic Shops</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="./shops.html">Shops</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./products.html">Products</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+
+    <!-- <div class="shops-container">
+      <div class="shops-container d-flex justify-content-between mt-5">
+        <h2>Shops</h2>
+        <form class="shops-search form-inline">
+          <input class="input-shops form-control mr-sm-2" type="search" placeholder="Search Shops" aria-label="Search">
+          <button class="btn-search-shops btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <ul class="shops"></ul>
+      </div>
+    </div> -->
+
+    <div class="shops-container">
+
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+        <h3 class="w-50">shops search</h3>
+
+
+        <div class="shops-search input-group w-100">
+          <input type="text input-group-text" class="input-shops form-control w-25">
+          <select name="region" class="region custom-select">
+            <option value="所有">所有</option>
+            <option value="中環">中環</option>
+            <option value="上環">上環</option>
+            <option value="荃灣">荃灣</option>
+          </select>
+          <button class="btn-search-shops btn btn-outline-success">search</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- <div class="card mw-100 mt-5">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Foresoon 科訊電腦</h5>
+        <p class="card-text">
+          <div>Region: 中環</div>
+          <div>Opening Hours: 07:30 - 18:30</div>
+          <div>Address: 中環德輔道中102號, Hong Kong, Hong Kong</div>
+          <div>Rating: 4.5</div>
+        </p>
+        <a href="#" class="btn btn-primary">More Detail</a>
+      </div>
+    </div> -->
+
+    <div class="shops mt-5 w-100 mx-auto"></div>
+  </div>
+
+  </div>
+
+  <script src="./javascript/script.js"></script>
+  <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
