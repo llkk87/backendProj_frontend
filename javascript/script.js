@@ -32,34 +32,39 @@ function printShops(shops) {
       </div>
     </div>
         `
-
-        // li.innerHTML = `
-        //     shopname: ${shop.shopname}\n
-        //     region: ${shop.region}\n
-        //     address: ${shop.address}\n
-        //     openHour: ${shop.openHour}\n
-        //     ratingsAverage: ${shop.ratingsAverage}\n
-        //     ratingQuantity: ${shop.ratingQuantity}\n
-        //     comments: ${shop.comments}\n
-        //     `
-
         shopsEl.appendChild(li);
     });
 }
 
 function printProducts(products) {
     products.forEach(product => {
-        const li = document.createElement("li");
+        const li = document.createElement("div");
 
-        li.innerText = `name: ${product.name}\n
-            brand: ${product.region}\n
-            price: ${product.price}\n
-            category: ${product.category}\n
-            description: ${product.description}\n
-            ratingsAverage: ${product.ratingsAverage}\n
-            ratingQuantity: ${product.ratingQuantity}\n
-            comments: ${product.comments}\n
-            `
+        li.innerHTML = `
+        <div class="card mt-5">
+      <!-- <img src="" class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">${product.name}</h5>
+        <p class="card-text">
+          <p>Brand: ${product.brand}</p>
+          <p>Price: $ ${product.price}</p>
+          <p>Category: ${product.category}</p>
+          <p>Description: ${product.description}</p>
+        </p>
+        <a href="#" class="btn btn-primary">More Detail</a>
+      </div>
+    </div>
+        `
+
+        // li.innerText = `name: ${product.name}\n
+        //     brand: ${product.brand}\n
+        //     price: ${product.price}\n
+        //     category: ${product.category}\n
+        //     description: ${product.description}\n
+        //     ratingsAverage: ${product.ratingsAverage}\n
+        //     ratingQuantity: ${product.ratingQuantity}\n
+        //     comments: ${product.comments}\n
+        //     `
 
         productsEl.appendChild(li);
     });
@@ -73,9 +78,35 @@ function printQuestions(questions) {
     })
 }
 
+function renderShopsPage() {
+
+    containerEl.innerHTML = `<div class="shops-container">
+
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+        <h3 class="w-50">shops search</h3>
+
+
+        <div class="shops-search input-group w-100">
+          <input type="text input-group-text" class="input-shops form-control w-25">
+          <select name="region" class="region custom-select">
+            <option value="所有">所有</option>
+            <option value="中環">中環</option>
+            <option value="上環">上環</option>
+            <option value="荃灣">荃灣</option>
+          </select>
+          <button class="btn-search-shops btn btn-outline-success">search</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="shops mt-5 w-100 mx-auto"></div>`
+}
+
 let shopsEl = document.querySelector(".shops");
 let productsEl = document.querySelector(".products");
 let questionsEl = document.querySelector(".questions");
+let containerEl = document.querySelector(".container");
 let inputShops = document.querySelector(".input-shops");
 let inputProducts = document.querySelector(".input-products");
 let inputMinPrice = document.querySelector(".input-minPrice");
@@ -83,6 +114,9 @@ let inputMaxPrice = document.querySelector(".input-maxPrice");
 let btnSearchShops = document.querySelector(".btn-search-shops");
 let btnSearchProducts = document.querySelector(".btn-search-products");
 let selectRegion = document.querySelector(".region");
+let linkHome = document.querySelector(".link-home");
+let linkShops = document.querySelector(".link-shops");
+let linkProducts = document.querySelector(".link-products");
 
 // http://localhost:8000/api/shops
 
@@ -183,4 +217,29 @@ btnSearchProducts?.addEventListener("click", () => {
 });
 
 
+function toggleVisibility(activeClass) {
+    const sections = ["home-container", "shops-container", "products-container"];
+    sections.forEach(section => {
+        const element = document.querySelector(`.${section}`);
+        if (section === activeClass) {
+            element?.classList.remove("display-none");
+        } else {
+            element?.classList.add("display-none");
+        }
+    });
 
+    clearContainer("shops");
+    clearContainer("products");
+}
+
+linkHome?.addEventListener("click", () => {
+    toggleVisibility("home-container");
+});
+
+linkShops?.addEventListener("click", () => {
+    toggleVisibility("shops-container");
+});
+
+linkProducts?.addEventListener("click", () => {
+    toggleVisibility("products-container");
+});
